@@ -269,3 +269,7 @@ func (d *Driver) OpenConnector(name string) (driver.Connector, error) {
 func (d *Driver) Unwrap(ctx context.Context) (*table.Client, error) {
 	return d.c.unwrap(ctx)
 }
+
+func (d *Driver) Pool() *table.SessionPool {
+	return &d.c.pool
+}
